@@ -1,0 +1,89 @@
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defalias
+  cec (tap-hold 200 200 esc lctl) ;; caps esc
+  sym (tap-hold 200 200 tab lsft) ;; tab shift
+  ecp (tap-hold 200 200 caps caps)
+  nwa (tap-hold 200 200 _ (layer-toggle symbols2)) ;; this is a while held toggle LAYER TOGGLE
+  
+
+  bak (tap-hold 200 200 _ (layer-switch default))
+  
+  ;; numbers
+  num (tap-hold	200 200 _ (layer-switch numbers))
+  nw4 (tap-hold 200 200 4 (layer-toggle symbols2)) ;; this is a while held toggle LAYER TOGGLE
+  enm (tap-hold 200 200 _ (layer-toggle numbers2))
+  fnm (tap-hold 200 200 _ (layer-toggle fnumbers))
+  
+  
+  slt (tap-hold 200 200 spc alt) ;; space tap, alt hold
+  
+  ;; HOME ROW MODS _ as a key means use default value
+  ssf (tap-hold 200 170 _ lsft) ;; tap _, hold shift, this is the third shift key now
+  ;; win (tap-hold 200 200 _ lmet) ;; _ or windows
+  win (tap-hold 200 200 _ lmet)
+  alt (tap-hold 200 200 _ lalt) ;; alt
+  ctl (tap-hold 200 200 _ lctl) ;; control
+  
+  ncl (tap-hold 100 100 f14 f14)
+  
+  ;; hjkl movement
+  hhh (tap-hold 200 200 _ left)
+  jjj (tap-hold 200 200 _ up)
+  kkk (tap-hold 200 200 _ down)
+  lll (tap-hold 200 200 _ rght)
+)
+
+(deflayer default
+  @ecp  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @sym q    @win @enm    r    t    y    u    i    o    p    [    ]    \
+  @cec a    @ssf @ctl @nwa g    h    j    @ctl @ssf ;    '    ret
+  lsft z    x    c    v    b    n    m    ,     .    /   rsft
+  @ncl lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
+)
+
+(deflayer numbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
+  _    S-5  S-6  S-7  S-8  _    _    _    _    S-9  S-0  _    _    _
+  _    1    2    3    @nw4 5    6    7    8    9    0    _    _
+  _    _    _    _    _    _    _    _    _    @bak _    _
+  _    _    _              _              _    _    _
+)
+
+(deflayer numbers2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
+  _    S-5  S-6  S-7  S-8  _    _    7    8    9    S-0  _    _    _
+  _    _    _    _    _    _    _    4    5    6    bspc _    _
+  _    _    _    _    _    _    0    1    2    3    _    _
+  _    _    _              _              _    _    _
+)
+
+(deflayer fnumbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
+  _    S-5  S-6  S-7  S-8  _    _    f7   f8   f9   S-0  _    _    _
+  _    _    _    _    _    _    _    f4   f5   f6   bspc _    _
+  _    _    _    _    _    _    f12  f1   f2   f3   _    _
+  _    _    _              _              _    _    _
+)
+
+;;	 my edits
+;;   when f held down do this
+(deflayer symbols2 
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
+  _    S-5  S-6  S-7  S-8  _    _    _    _    S-9  S-0  _    _    _
+  _    _    _    del  _    _    left down up   rght bspc _    _       ;; this is the home row
+  _    _    _    _    _    _    _    ret  _    _    _    _
+  _    _    _              _              _    _    _
+)
