@@ -46,8 +46,8 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   @sym q    @win @enm    r    t    y    u    i    o    p    [    ]    \
   @cec a    @ssf @ctl @nwa g    h    j    @ctl @ssf ;    '    ret
-  \  z    x    c    v    b    n    m    ,     .    /   rsft
-  f15 lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
+  lsft z    x    c    v    b    n    m    ,     .    /   rsft
+  f14 lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
 )
 
 (deflayer numbers
