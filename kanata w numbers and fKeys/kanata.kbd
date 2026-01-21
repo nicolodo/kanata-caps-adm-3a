@@ -22,6 +22,8 @@
   enm (tap-hold 200 200 _ (layer-toggle numbers2))
   fnm (tap-hold 200 200 _ (layer-toggle fnumbers))
   
+  nrm (tap-hold 200 500 _ (layer-switch normalKeyboard)) ;;This turns off most of my alterations while held
+  dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default
   
   slt (tap-hold 200 200 spc alt) ;; space tap, alt hold
   
@@ -44,10 +46,28 @@
 (deflayer default
   @ecp  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  @sym q    @win @enm    r    t    y    u    i    o    p    [    ]    \
+  @sym @nrm @win @enm    r    t    y    u    i    o    p    [    ]    \
   @cec a    @ssf @ctl @nwa g    h    j    @ctl @ssf ;    '    ret
-  lsft z    x    c    v    b    n    m    ,     .    /   rsft
-  f14 lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
+  \  z    x    c    v    b    n    m    ,     .    /   rsft
+  f15 lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
+)
+
+(deflayer normalKeyboard
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [   ]    \
+  @dft a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer sameKeyboard
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _	   _	
+  _    _    _    _    _    _    _    _    k    l    ;    '    ret
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
 )
 
 (deflayer numbers
@@ -93,6 +113,6 @@
   _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
   _    S-5  S-6  S-7  S-8  _    _    _    _    S-9  S-0  _    _    _
   _    _    _    del  _    _    left down up   rght bspc _    _       ;; this is the home row
-  _    _    _    _    _    _    _    ret  _    _    _    _    ;; swap rsft with prnt on f hold
+  _    _    _    _    _    _    _    ret  _    _    _    f16    ;; swap rsft with prnt on f hold //f16 i hope does nothing so i can use it to work with mouseless
   _    _    _              _              _    _    _
 )
