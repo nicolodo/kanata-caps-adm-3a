@@ -22,9 +22,12 @@
   enm (tap-hold 200 200 _ (layer-toggle numbers2))
   fnm (tap-hold 200 200 _ (layer-toggle fnumbers))
   
-  nrm (tap-hold 200 500 _ (layer-switch normalKeyboard)) ;;This turns off most of my alterations while held
-  dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default
-  
+  nrm (tap-hold 200 300 _ (layer-switch normalKeyboard)) ;;This turns off most of my alterations while held
+  ;;dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default
+  ;; The line below Switches back to the default layout AND sends an esc key
+  ;; This is so that, the mouseless turns off too
+  dft (multi (layer-switch default) esc)
+
   slt (tap-hold 200 200 spc alt) ;; space tap, alt hold
   
   ;; HOME ROW MODS _ as a key means use default value
@@ -48,8 +51,8 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   @sym @nrm @win @enm    r    t    y    u    i    o    p    [    ]    \
   @cec a    @ssf @ctl @nwa g    h    j    @ctl @ssf ;    '    ret
-  \  z    x    c    v    b    n    m    ,     .    /  @nwa 
-  f15 lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
+  f16  z    x    c    v    b    n    m    ,     .    /  @nwa 
+  f17  lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
 )
 
 (deflayer normalKeyboard
