@@ -22,7 +22,13 @@
   enm (tap-hold 200 200 _ (layer-toggle numbers2))
   fnm (tap-hold 200 200 _ (layer-toggle fnumbers))
   
+  ;; for Mouseless
   nrm (tap-hold 200 300 _ (layer-switch normalKeyboard)) ;;This turns off most of my alterations while held
+
+  ;; Sends f17 for mouseless and switches to the normal keyboard else sends _
+  ;;sqe (tap-hold 200 300 _ (multi(layer-switch normalKeyboard)) f17)
+  sqe (multi (layer-switch normalKeyboard) f17)
+
   ;;dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default
   ;; The line below Switches back to the default layout AND sends an esc key
   ;; This is so that, the mouseless turns off too
