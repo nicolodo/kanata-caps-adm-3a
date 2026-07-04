@@ -19,6 +19,9 @@
   ;; numbers
   num (tap-hold	200 200 _ (layer-switch numbers))
   nw4 (tap-hold 200 200 4 (layer-toggle symbols2)) ;; this is a while held toggle LAYER TOGGLE
+  jky (tap-hold 200 200 _ (layer-toggle jkeyedits)) ;; this new layer lets me use k as backspace when I hold j
+  gky (tap-hold 200 200 _ (layer-toggle gkeyedits)) ;; this layer moves [];'/\# into rhand range when I hold g
+
   enm (tap-hold 200 200 _ (layer-toggle numbers2))
   fnm (tap-hold 200 200 _ (layer-toggle fnumbers))
   
@@ -29,7 +32,7 @@
   ;;sqe (tap-hold 200 300 _ (multi(layer-switch normalKeyboard)) f17)
   sqe (multi (layer-switch normalKeyboard) f17)
 
-  ;;dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default
+  ;;dft (tap-hold 0 10 (layer-switch default) (layer-switch default)) ;;This switches back to default 
   ;; The line below Switches back to the default layout AND sends an esc key
   ;; This is so that, the mouseless turns off too
   dft (multi (layer-switch default) esc)
@@ -56,7 +59,7 @@
   @ecp  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   @sym @nrm @win @enm    r    t    y    u    i    o    p    [    ]    \
-  @cec a    @ssf @ctl @nwa g    h    j    @ctl @ssf ;    '    ret
+  @cec a    @ssf @ctl @nwa @gky    h    @jky    @ctl @ssf ;    '    ret
   \    z    x    c    v    b    n    m    ,     .    /  @nwa 
   f17  lmet lalt          @slt            ralt rmet rctl 				;; "f14" (does nothing I hope) & replaces lctl (left control) 
 )
