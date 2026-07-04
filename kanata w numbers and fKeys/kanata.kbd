@@ -126,3 +126,21 @@
   f16  _    _    _    _    _    _    ret  f16  @sqe  _    f17    ;; swap rsft with prnt on f hold //f16 i hope does nothing so i can use it to work with mouseless
   _    _    _              _              _    _    _
 )
+
+(deflayer jkeyedits
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    [    ]    _    _    _    _	   _	
+  _    _    _    _    _    _    _    ;    '    \     ;    '    ret
+  _    _    _    _    _    _    _    _    /    _    _    _
+  _    _    _              _              _    _    _
+)
+
+(deflayer gkeyedits 
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    [    ]    _    _    _    _	   _	
+  _    _    _    _    _    _    _    ;    '    l    ;    '    ret
+  _    _    _    _    _    _    _    _    /    _    _    _
+  _    _    _              _              _    _    _
+)
